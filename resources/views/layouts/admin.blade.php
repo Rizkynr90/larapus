@@ -36,14 +36,16 @@
 
   <!-- Navbar -->
   @include('layouts.partials.nav')
-  <!-- /.navbar -->
+  <!-- End navbar -->
 
   <!-- Main Sidebar Container -->
   @include('layouts.partials.sidebar')
+<!-- End Main Sidebar Container -->
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <header class="container ml-3">
+    <header class="header">
         @yield('header')
     </header>
     <!-- /.content-header -->
@@ -52,7 +54,7 @@
     <section class="content">
         @yield('content')
     </section>
-    <!-- /.content -->
+    <!-- End content -->
   </div>
   <!-- /.content-wrapper -->
  @include('layouts.partials.footer')
