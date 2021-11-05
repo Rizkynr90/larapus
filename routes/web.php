@@ -25,3 +25,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('tes-admin', function () {
     return view('admin.index');
 });
+
+Route::prefix('admin')->group(function() {
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+});
