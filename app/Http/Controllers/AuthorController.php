@@ -37,8 +37,8 @@ class AuthorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first' => 'required',
-            'last' => 'required'
+            'firstname' => 'required',
+            'lastname' => 'required'
         ]);
         $author = new Author;
         $author->firstname = $request->firstname;
@@ -53,9 +53,10 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function show(Author $author)
+    public function show($id)
     {
-        return view('admin.author.show');
+        $author = Author::findOrFail($id);
+        return view('admin.author.show', compact('author'));
     }
 
     /**
@@ -64,9 +65,10 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function edit(Author $author)
+    public function edit($id)
     {
-        return view('admin.author.edit');
+        $author = Author::findOrFail($id);
+        return view('admin.author.edit', compact('author'));
     }
 
     /**
@@ -76,9 +78,17 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Author $author)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required'
+        ]);
+        $author = Author::findOrFail($id);
+        $author->firstname = $request->firstname;
+        $author->lastname = $request->lastname;
+        $author->save();
+        return redirect()->route('author.index');
     }
 
     /**
@@ -87,8 +97,9 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Author $author)
+    public function destroy($id)
     {
-        //
+        $author = Author::findOrFail($id)->delete();
+        return redirect()->route('author.index');
     }
 }

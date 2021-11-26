@@ -36,8 +36,8 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <button type="reset" class="btn btn-outline-warning">Reset</button>
                         <button type="submit" class="btn btn-outline-success">Tambah</button>
+                        <button type="reset" class="btn btn-outline-warning">Reset</button>
                     </div>
                     </form>
                 </div>

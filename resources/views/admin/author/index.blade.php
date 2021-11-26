@@ -10,7 +10,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">Data Penulis</div>
-                    <a href="{{ route('author.create') }}" class="btn btn-primary">Tambah Data</a>
+                    <a href="{{ route('author.create') }}" class="btn btn-outline-primary">Tambah Data</a>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table">
@@ -29,10 +29,11 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $data->firstname }}</td>
                                     <td>{{ $data->lastname }}</td>
-                                    <td>Fullname</td>
+                                    <td>{{ $data->fullname() }}</td>
                                     <td>
                                         <form action="{{ route('author.destroy', $data->id)}}" method="post">
                                         @csrf
+                                        @method('DELETE')
                                         <a href="{{ route('author.edit', $data->id) }}" class="btn btn-outline-success">Edit</a>
                                         <a href="{{ route('author.show', $data->id) }}" class="btn btn-outline-warning">Show</a>
                                         <button type="submit" onclick="return confirm('Apakah anda yakin?')" class="btn btn-outline-danger">
