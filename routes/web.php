@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function() {
     Route::get('/', function () {
         return view('admin.index');
     });
+
+    Route::resource('author', AuthorController::class);
 });
