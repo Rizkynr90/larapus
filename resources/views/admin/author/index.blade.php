@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('header')
+<h3>Halaman Index</h3>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="'row">
@@ -29,9 +33,9 @@
                                     <td>
                                         <form action="{{ route('author.destroy', $data->id)}}" method="post">
                                         @csrf
-                                        <a href="{{ route('author.edit', $data->id) }}" class="btn btn-success">Edit</a>
-                                        <a href="{{ route('author.show', $data->id) }}" class="btn btn-warning">Show</a>
-                                        <button type="submit" onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger">
+                                        <a href="{{ route('author.edit', $data->id) }}" class="btn btn-outline-success">Edit</a>
+                                        <a href="{{ route('author.show', $data->id) }}" class="btn btn-outline-warning">Show</a>
+                                        <button type="submit" onclick="return confirm('Apakah anda yakin?')" class="btn btn-outline-danger">
                                             Delete
                                         </button>
                                         </form>
