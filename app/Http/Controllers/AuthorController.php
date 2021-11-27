@@ -40,7 +40,7 @@ class AuthorController extends Controller
             'firstname' => 'required',
             'lastname' => 'required'
         ]);
-        $author = new Author;
+        $author = new Author();
         $author->firstname = $request->firstname;
         $author->lastname = $request->lastname;
         $author->save();

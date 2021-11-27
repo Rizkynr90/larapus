@@ -16,4 +16,9 @@ class Author extends Model
     {
         return $this->firstname. " " . $this->lastname;
     }
+
+    public function book()
+    {
+        return $this->hasMany('App\Models\Book', 'author_id');
+    }
 }
