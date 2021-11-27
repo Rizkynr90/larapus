@@ -17,7 +17,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Author ID</label>
-                        <input type="text" name="author_id" class="form-control" value="{{ $book->$author->fullname() }}" readonly>
+                        <input type="text" name="author_id" class="form-control" value="{{ $book->author->fullname() }}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="">Amount</label>

@@ -80,7 +80,7 @@ class BookController extends Controller
     {
         $book = Book::findOrFail($id);
         $author = Author::all();
-        return view('admin.author.edit', compact('book', 'author'));
+        return view('admin.book.edit', compact('book', 'author'));
     }
 
     /**
