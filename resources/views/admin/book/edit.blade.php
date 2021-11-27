@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('header')
+<h3>Halaman Edit</h3>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

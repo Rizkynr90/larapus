@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-header">Add Book</div>
                 <div class="card-body">
-                    <form action="{{route('books.store')}}" method="post">
+                    <form action="{{route('books.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="">Book Title</label>

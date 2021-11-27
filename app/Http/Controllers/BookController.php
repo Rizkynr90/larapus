@@ -42,7 +42,7 @@ class BookController extends Controller
             'title' => 'required|unique:books',
             'amount' => 'required',
             'author_id' => 'required',
-            'cover' => 'required|image|max:2048'
+            'cover' => 'required|image|max:2048',
         ]);
         $book = new Book;
         $book->title = $request->title;
@@ -55,7 +55,7 @@ class BookController extends Controller
         }
         $book->amount = $request->amount;
         $book->save();
-        return redirect()->route('book.index');
+        return redirect()->route('books.index');
     }
 
     /**
@@ -95,7 +95,7 @@ class BookController extends Controller
         $request->validate([
             'title' => 'required',
             'amount' => 'required',
-            'author_id' => 'required'
+            'author_id' => 'required',
         ]);
         $book = Book::findOrFail($id);
         $book->title = $request->title;
@@ -109,7 +109,7 @@ class BookController extends Controller
         }
         $book->amount = $request->amount;
         $book->save();
-        return redirect()->route('book.index');
+        return redirect()->route('books.index');
     }
 
     /**
@@ -123,6 +123,6 @@ class BookController extends Controller
         $book = Book::findOrFail($id);
         $book->deleteImage();
         $book->delete();
-        return redirect()->route('book.index');
+        return redirect()->route('books.index');
     }
 }
