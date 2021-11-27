@@ -52,8 +52,8 @@
                                 <input type="file" name="cover" value="{{ $book->cover }}" class="form-control">
                             </div>
                             <div class="form-group">
-                                <button type="reset" class="btn btn-outline-warning">Reset</button>
                                 <button type="submit" class="btn btn-outline-primary">Save</button>
+                                <button type="reset" class="btn btn-outline-warning">Reset</button>
                             </div>
                         </form>
                     </div>
